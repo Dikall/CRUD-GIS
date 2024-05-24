@@ -36,3 +36,6 @@ Route::get('/place/data', [DataController::class,'place'])->name('place.data'); 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('places', PlaceController::class);
 });
+
+Route::get('/places/create', [PlaceController::class, 'create']);
+Route::post('/places', [PlaceController::class, 'store']);
